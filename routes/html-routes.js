@@ -15,9 +15,23 @@ module.exports = function(app){
                 result.headline = $(this).children("a").text();
                 result.link = $(this).children("a").attr("href");
                 }
-                res.json(result);
+                db.Article.create(result).then(function(dbArticle){
+                    res.json(dbArticle);
+                });
             });
             
+        });
+
+    });
+    app.get("/articles", function(req, res){
+        db.Article.find({}).then(function(dbArticle){
+        res.json(dbArticle);
+        });
+    });
+    
+    app.get("/articles/:id", function(req, res){
+        db.Article.remove({_id: req.params.id}).then(function(){
+            res.json({item: "removed"});
         });
     });
 };
