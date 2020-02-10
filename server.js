@@ -16,6 +16,10 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/scrap", {useNewUrlParser: true});
 
+require("./routes/html-routes.js")(app);
+
+
 app.listen(PORT, function(){
     console.log("App running on " + PORT + ".");
 });
+
