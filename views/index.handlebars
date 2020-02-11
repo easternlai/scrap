@@ -1,10 +1,20 @@
-<h1>Daily News!</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">The Minden, NV Daily</h1>
+    <p class="lead">Checkout all the latest Carson Valley news</p>
+  </div>
+</div>
 
-
+    <div class="container">
     {{#each articles}}
-        <p>Article: {{headline}}</p>
-        <a href="{{url}}">url: {{url}}</a>
-        <br>
-        <button data-id="{{_id}}">delete</button>
-        <br>
+        <div class="row">
+                <div class="col-"lg>
+                <p>Article: {{headline}}</p>
+                <p><a href="{{url}}" class="smaller">url: {{url}}</a></p>
+                <button data-id="{{_id}}" class="btn btn-primary">delete</button>
+            </div>
+        </div>
     {{/each}}
+    </div>
+
+

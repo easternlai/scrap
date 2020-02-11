@@ -1,0 +1,11 @@
+
+p {
+    font-size: 2em;
+}
+
+.smaller {
+    font-size: 1.5rem;
+}
+.row {
+    padding-bottom: 30px;
+}

@@ -29,10 +29,15 @@ module.exports = function(app){
     });
     app.get("/articles", function(req, res){
         db.Article.find({}).then(function(dbArticle){
+
+            var topArticles = [];
+            for( i = dbArticle.length -1; i > dbArticle.length -9; i--){
+                topArticles.push(dbArticle[i]);
+            }
+            console.log(topArticles);
             var articlesObj = {
-                articles: dbArticle
+                articles: topArticles
             };
-            console.log(articlesObj.articles[0].headline);
             res.render("index", articlesObj);
         });
     });
