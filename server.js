@@ -20,12 +20,13 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
+// mongoose.connect("mongodb://localhost/scrap", {useNewUrlParser: true});
 mongoose.connect(MONGODB_URI);
 
 require("./routes/html-routes.js")(app);
 
 
-app.listen(PORT, function(){
+app.listen(MONGODB_URI, function(){
     console.log("App running on " + PORT + ".");
 });
 
