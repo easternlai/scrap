@@ -1,0 +1,10 @@
+<h1>Daily News!</h1>
+
+
+    {{#each articles}}
+        <p>Article: {{headline}}</p>
+        <a href="{{url}}">url: {{url}}</a>
+        <br>
+        <button data-id="{{_id}}">delete</button>
+        <br>
+    {{/each}}
