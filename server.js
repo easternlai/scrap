@@ -2,12 +2,13 @@ var express = require("express");
 var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
+require("dotenv").config();
 
 var db = require("./models");
 
 var PORT = 3006;
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI;
 
 var app = express();
 
