@@ -3,7 +3,6 @@ var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
 require("dotenv").config();
-
 var db = require("./models");
 
 var PORT = 3006;
@@ -22,7 +21,7 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // mongoose.connect("mongodb://localhost/scrap", {useNewUrlParser: true});
-mongoose.connect(MONGODB_URI);
+mongoose.connect("mongodb://easternlai:Password1@ds339968.mlab.com:39968/heroku_9g9z8b7r");
 
 require("./routes/html-routes.js")(app);
 
