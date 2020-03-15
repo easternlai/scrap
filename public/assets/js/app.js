@@ -1,6 +1,6 @@
 $(function(){
 
-    $("button").on("click", function(){
+    $("#article-delete").on("click", function(){
         var id = $(this).data("id");
         
         $.ajax("/delete/" + id, {
